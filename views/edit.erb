@@ -1,0 +1,14 @@
+<div class="section">
+<h1>Update an Item</h1>
+
+<div class="update">
+<form method="post" action="/groceries/<%= @id %>">
+  <label for="name">New Name</label>
+  <input type="hidden" name="_method" value="PATCH">
+  <input type="text" name="name" id="name"value="<%= @name[0]['name'] %>">
+  <input type="submit" value="Update Name" />
+</form>
+</div>
+
+<a class="backhome" href="/groceries">Back to Grocery List</a>
+</div>

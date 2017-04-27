@@ -1,0 +1,29 @@
+<div class="section">
+<h1>Grocery List</h1>
+
+<div class="list">
+<ul id="grocery-list">
+  <% @groceries.each do |item| %>
+    <li class="item">
+      <a href="/groceries/<%= item['id'] %>"><%= item['name'] %></a>
+        <form class="delete" method="post" action="/groceries/<%= item['id'] %>">
+          <input type="hidden" name="_method" value="DELETE">
+          <input type="submit" value="Delete" />
+        </form>
+        <a href="/groceries/<%= item['id'] %>/edit">Update</a>
+    </li>
+  <% end %>
+</ul>
+<h2>Add an Item:</h2>
+</div>
+
+  <div class="new">
+  <form method="post" action="/groceries">
+    <label for="name">Name</label>
+    <input type="text" name="name" id="name" />
+
+    <input type="submit" value="Submit" />
+  </form>
+
+</div>
+</div>

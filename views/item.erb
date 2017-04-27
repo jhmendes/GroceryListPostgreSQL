@@ -1,0 +1,8 @@
+<div class="section">
+<h1><%= @name[0]['name'] %></h1>
+
+<% @comments.each do |comment| %>
+  <h2><%= comment["body"] %></h2>
+<% end %>
+<a class="backhome" href="/groceries">Back to Grocery List</a>
+</div>
